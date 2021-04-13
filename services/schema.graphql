@@ -1,0 +1,32 @@
+type User {
+  email: String!
+  password: String!
+  name: String
+  phone: String
+  role: Role
+  profile: Profile
+  skills: [Skill]
+  todos: [Todo]
+}
+
+enum Role {
+  PARTNER
+  USER
+}
+
+type Profile {
+  address: String
+  latestEducation: String
+  user: User!
+}
+
+type Skill {
+  name: String
+  user: User!
+}
+
+type Todo {
+  title: String
+  isDone: Boolean
+  user: User!
+}

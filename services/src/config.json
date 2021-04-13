@@ -1,0 +1,8 @@
+{
+  "PORT": 4000,
+  "USER_URL": "http://localhost:7000",
+  "SKILL_URL": "http://localhost:5000",
+  "PROFILE_URL": "http://localhost:5001",
+  "TODO_URL": "http://localhost:5002",
+  "MONGODB_URL": "mongodb://admin:admin@localhost:27017/todo_app?authSource=admin"
+}
