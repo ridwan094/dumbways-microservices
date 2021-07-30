@@ -1,5 +1,5 @@
 {
   "PORT": 7000,
   "SECRET_KEY": "microservice",
-  "MONGODB_URL": "mongodb://admin:admin@localhost:27017/todo_app?authSource=admin"
+  "MONGODB_URL": "mongodb://mongo:27017/todo_app?authSource=admin"
 }

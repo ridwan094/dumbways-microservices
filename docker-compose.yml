@@ -1,0 +1,59 @@
+version: '3'
+
+services:
+    mongo:
+        image : mongo
+        container_name: mongo
+        environment:
+        - PUID=1000
+        - PGID=1000
+        volumes:
+        - /home/sgnd/mongo/database:/data/db
+        ports:
+        - 27017:27017
+        restart: unless-stopped
+
+    todo-profile:
+        build: ./profile
+        command: "ts-node /app/src/server"
+        image: todo-profile
+        restart: always
+        container_name: todo-profile
+        ports:
+        - 5001:5001
+    
+    todo-services:
+        build: ./services
+        command: "node /app/src/server.js"
+        image: todo-services
+        restart: always
+        container_name: todo-services
+        ports:
+        - 4000:4000
+    
+    todo-skill:
+        build: ./skill
+        command: "ts-node /app/src/server"
+        image: todo-skill
+        restart: always
+        container_name: todo-skill
+        ports:
+        - 5000:5000
+
+    todo-todo:
+        build: ./todo
+        command: "ts-node /app/src/server"
+        image: todo-todo
+        restart: always
+        container_name: todo-todo
+        ports:
+        - 5002:5002
+
+    todo-user:
+        build: ./user
+        command: "ts-node /app/src/server"
+        image: todo-user
+        restart: always
+        container_name: todo-user
+        ports:
+        - 7000:7000
