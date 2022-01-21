@@ -1,0 +1,101 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-profile
+spec:
+  selector:
+    matchLabels:
+      app: todo-profile
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: todo-profile
+    spec:
+      containers:
+      - name: todo-profile
+        image: suganda/todo-profile
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-services
+spec:
+  selector:
+    matchLabels:
+      app: todo-services
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: todo-services
+    spec:
+      containers:
+      - name: todo-services
+        image: suganda/todo-services
+        ports:
+        - containerPort: 80
+        
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-skill
+spec:
+  selector:
+    matchLabels:
+      app: todo-skill
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: todo-skill
+    spec:
+      containers:
+      - name: todo-skill
+        image: suganda/todo-skill
+        ports:
+        - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-todo
+spec:
+  selector:
+    matchLabels:
+      app: todo-todo
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: todo-todo
+    spec:
+      containers:
+      - name: todo-todo
+        image: suganda/todo-todo
+        ports:
+        - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-user
+spec:
+  selector:
+    matchLabels:
+      app: todo-user
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: todo-user
+    spec:
+      containers:
+      - name: todo-user
+        image: suganda/todo-user
+        ports:
+        - containerPort: 80
