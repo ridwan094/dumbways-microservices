@@ -16,7 +16,7 @@ services:
     todo-profile:
         build: ./profile
         command: "ts-node /app/src/server"
-        image: todo-profile
+        image: suganda/todo-profile
         restart: always
         container_name: todo-profile
         ports:
@@ -25,7 +25,7 @@ services:
     todo-services:
         build: ./services
         command: "node /app/src/server.js"
-        image: todo-services
+        image: suganda/todo-services
         restart: always
         container_name: todo-services
         ports:
@@ -34,7 +34,7 @@ services:
     todo-skill:
         build: ./skill
         command: "ts-node /app/src/server"
-        image: todo-skill
+        image: suganda/todo-skill
         restart: always
         container_name: todo-skill
         ports:
@@ -43,7 +43,7 @@ services:
     todo-todo:
         build: ./todo
         command: "ts-node /app/src/server"
-        image: todo-todo
+        image: suganda/todo-todo
         restart: always
         container_name: todo-todo
         ports:
@@ -52,7 +52,7 @@ services:
     todo-user:
         build: ./user
         command: "ts-node /app/src/server"
-        image: todo-user
+        image: suganda/todo-user
         restart: always
         container_name: todo-user
         ports:
